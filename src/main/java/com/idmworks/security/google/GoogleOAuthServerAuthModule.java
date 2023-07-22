@@ -17,15 +17,15 @@ import javax.security.auth.callback.Callback;
 import javax.security.auth.callback.CallbackHandler;
 import javax.security.auth.login.LoginContext;
 import javax.security.auth.login.LoginException;
-import javax.security.auth.message.AuthException;
-import javax.security.auth.message.AuthStatus;
-import javax.security.auth.message.MessageInfo;
-import javax.security.auth.message.MessagePolicy;
-import javax.security.auth.message.callback.CallerPrincipalCallback;
-import javax.security.auth.message.callback.GroupPrincipalCallback;
-import javax.security.auth.message.module.ServerAuthModule;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.security.auth.message.AuthException;
+import jakarta.security.auth.message.AuthStatus;
+import jakarta.security.auth.message.MessageInfo;
+import jakarta.security.auth.message.MessagePolicy;
+import jakarta.security.auth.message.callback.CallerPrincipalCallback;
+import jakarta.security.auth.message.callback.GroupPrincipalCallback;
+import jakarta.security.auth.message.module.ServerAuthModule;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 /**
  * SAM ({@link ServerAuthModule}) for Google OAuth.
@@ -38,8 +38,8 @@ public class GoogleOAuthServerAuthModule implements ServerAuthModule {
    * SAM Constants
    */
   private static final String LEARNING_CONTEXT_KEY = "javax.security.auth.login.LoginContext";
-  private static final String IS_MANDATORY_INFO_KEY = "javax.security.auth.message.MessagePolicy.isMandatory";
-  private static final String AUTH_TYPE_INFO_KEY = "javax.servlet.http.authType";
+  private static final String IS_MANDATORY_INFO_KEY = "jakarta.security.auth.message.MessagePolicy.isMandatory";
+  private static final String AUTH_TYPE_INFO_KEY = "jakarta.servlet.http.authType";
   private static final String AUTH_TYPE_GOOGLE_OAUTH_KEY = "Google-OAuth";
   /*
    * defaults
@@ -57,8 +57,8 @@ public class GoogleOAuthServerAuthModule implements ServerAuthModule {
   private static final String DEFAULT_GROUPS_PROPERTY_NAME = "default_groups";
   private static Logger LOGGER = Logger.getLogger(GoogleOAuthServerAuthModule.class.getName());
   protected static final Class[] SUPPORTED_MESSAGE_TYPES = new Class[]{
-    javax.servlet.http.HttpServletRequest.class,
-    javax.servlet.http.HttpServletResponse.class};
+    jakarta.servlet.http.HttpServletRequest.class,
+    jakarta.servlet.http.HttpServletResponse.class};
   private CallbackHandler handler;
   //properties
   private String clientid;
